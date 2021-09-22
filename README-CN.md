@@ -15,6 +15,7 @@ terraform-alicloud-rabbitmq
 
 ```hcl
 module "rabbitmq" {
+  count          = true
   source         = "terraform-alicloud-modules/rabbitmq/alicloud"
   instance_name  = "tf-rabbitmq"
   instance_type  = "professional"
@@ -52,7 +53,7 @@ module "rabbitmq" {
 
 ## 作者
 
-Created and maintained by WangChao(wc01169074@alibaba-inc.com)
+Created and maintained by Alibaba Cloud Terraform Team(terraform@alibabacloud.com)
 
 ## 许可
 
