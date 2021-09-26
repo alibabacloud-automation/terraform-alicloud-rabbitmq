@@ -57,3 +57,33 @@ variable "instance_id" {
   type        = string
   default     = ""
 }
+
+variable "auto_delete_state" {
+  description = "The specification of the auto delete state."
+  type        = bool
+  default     = false
+}
+
+variable "exchange_type" {
+  description = "The specification of the exchange type."
+  type        = string
+  default     = "HEADERS"
+}
+
+variable "internal" {
+  description = "The specification of the internal."
+  type        = bool
+  default     = false
+}
+
+variable "argument" {
+  description = "The specification of the argument."
+  type        = string
+  default     = "x-match:all"
+}
+
+variable "binding_type" {
+  description = "The specification of the binding type."
+  type        = string
+  default     = "QUEUE"
+}
