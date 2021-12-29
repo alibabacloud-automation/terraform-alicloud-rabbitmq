@@ -1,7 +1,14 @@
 variable "name" {
+  description = "(Deprecated from version 1.1.0) The specification of module name."
+  type        = string
+  default     = ""
+}
+
+#alicloud_amqp_instance
+variable "instance_name" {
   description = "The specification of module name."
   type        = string
-  default     = "terraform_name"
+  default     = ""
 }
 
 variable "instance_type" {
@@ -46,6 +53,12 @@ variable "period" {
   default     = 1
 }
 
+variable "modify_type" {
+  description = "The modify type.It is required when updating other attributes."
+  type        = string
+  default     = "Downgrade"
+}
+
 variable "create" {
   description = "Whether to create instance. If false, you can specify an existing instance by setting 'instance_id'."
   type        = bool
@@ -53,15 +66,36 @@ variable "create" {
 }
 
 variable "instance_id" {
-  description = "The instance_id used to RabbitMQ. If set, the 'create' will be ignored."
+  description = "The instance_id used to RabbitMQ. If 'create' is true, the 'instance ID' is invalid.If 'create' is false,you must specify an existing instance by setting 'instance_id'."
   type        = string
   default     = ""
 }
 
+#alicloud_amqp_virtual_host
+variable "virtual_host_name" {
+  description = "VirtualHostName."
+  type        = string
+  default     = ""
+}
+
+#alicloud_amqp_queue
+variable "queue_name" {
+  description = "The name of the queue."
+  type        = string
+  default     = ""
+}
+
+#alicloud_amqp_exchange
 variable "auto_delete_state" {
   description = "The specification of the auto delete state."
   type        = bool
   default     = false
+}
+
+variable "exchange_name" {
+  description = "The name of the exchange."
+  type        = string
+  default     = ""
 }
 
 variable "exchange_type" {
@@ -76,6 +110,7 @@ variable "internal" {
   default     = false
 }
 
+#alicloud_amqp_binding
 variable "argument" {
   description = "The specification of the argument."
   type        = string
