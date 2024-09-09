@@ -1,3 +1,7 @@
+provider "alicloud" {
+  region = "cn-shanghai"
+}
+
 module "example" {
   source = "../.."
 
@@ -17,7 +21,12 @@ module "example" {
   virtual_host_name = "virtual_host_name"
 
   #alicloud_amqp_queue
-  queue_name = "queue_name"
+  queue_name              = "queue_name"
+  auto_delete_state_queue = "true"
+  auto_expire_state       = "10000"
+  max_length              = "100"
+  maximum_priority        = "10"
+  message_ttl             = "100"
 
   #alicloud_amqp_exchange
   auto_delete_state = false
