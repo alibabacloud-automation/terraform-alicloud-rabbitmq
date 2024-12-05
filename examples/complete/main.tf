@@ -6,16 +6,17 @@ module "example" {
   source = "../.."
 
   #alicloud_amqp_instance
-  create         = true
-  instance_name  = var.instance_name
-  instance_type  = "professional"
-  max_tps        = var.max_tps
-  queue_capacity = var.queue_capacity
-  support_eip    = var.support_eip
-  max_eip_tps    = var.max_eip_tps
-  payment_type   = var.payment_type
-  period         = var.period
-  modify_type    = var.modify_type
+  create                 = true
+  instance_name          = var.instance_name
+  instance_type          = null
+  max_tps                = var.max_tps
+  queue_capacity         = var.queue_capacity
+  support_eip            = var.support_eip
+  max_eip_tps            = var.max_eip_tps
+  payment_type           = var.payment_type
+  serverless_charge_type = "onDemand"
+  period                 = var.period
+  modify_type            = var.modify_type
 
   #alicloud_amqp_virtual_host
   virtual_host_name = "virtual_host_name"

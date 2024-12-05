@@ -8,19 +8,19 @@ variable "instance_name" {
 variable "max_tps" {
   description = "The specification of the peak TPS traffic."
   type        = number
-  default     = 1000
+  default     = null
 }
 
 variable "queue_capacity" {
   description = "The specification of the queue capacity."
   type        = number
-  default     = 50
+  default     = null
 }
 
 variable "support_eip" {
   description = "The specification of support EIP."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "max_eip_tps" {
@@ -32,7 +32,7 @@ variable "max_eip_tps" {
 variable "payment_type" {
   description = "The specification of the payment type."
   type        = string
-  default     = "Subscription"
+  default     = "PayAsYouGo"
 }
 
 variable "period" {
@@ -44,7 +44,7 @@ variable "period" {
 variable "modify_type" {
   description = "The modify type.It is required when updating other attributes."
   type        = string
-  default     = "Downgrade"
+  default     = null
 }
 
 #alicloud_amqp_exchange
