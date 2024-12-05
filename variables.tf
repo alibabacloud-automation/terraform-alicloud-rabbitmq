@@ -47,6 +47,12 @@ variable "payment_type" {
   default     = "Subscription"
 }
 
+variable "serverless_charge_type" {
+  description = "The specification of the serverless charge type."
+  type        = string
+  default     = null
+}
+
 variable "period" {
   description = "The specification of the period."
   type        = number
