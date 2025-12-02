@@ -1,3 +1,5 @@
+## [1.2.1](https://github.com/alibabacloud-automation/terraform-alicloud-rabbitmq/compare/v1.2.0...v1.2.1) (2025-12-02)
+
 ## 1.3.0 (Unreleased)
 ## 1.2.0 (2024-12-05)
 
